@@ -1,0 +1,60 @@
+@use '../abstract' as *;
+
+/* Main */
+.container {
+    width: min(100% - 2rem, 60rem);
+    margin-inline: auto;
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.flex-strech {
+    display: flex;
+    justify-content: space-between;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.a-end {
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
+/* Typography */
+.fw-700 {
+    font-weight: var(--fw-700);
+}
+
+.text-neutral {
+    color: var(--neutral-900);
+}
+
+.text-body {
+    color: var(--neutral-400);
+}
+
+.text-success {
+    color: var(--clr-success);
+}
+
+.text-danger {
+    color: var(--clr-danger);
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

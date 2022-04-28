@@ -1,0 +1,58 @@
+@use '../abstract' as *;
+
+.cards {
+    flex-direction: column;
+
+    @include md('medium') {
+        flex-direction: row;
+    }
+}
+
+.cards--grid {
+    @include md('small') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include md('medium') {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Cards */
+.card {
+    width: min(100%, 20rem);
+    margin-inline: auto;
+    text-align: center;
+    background-color: var(--neutral-300);
+    padding: 2rem;
+    border-radius: 3px;
+}
+
+.card__header,
+.card__footer {
+    width: fit-content;
+    margin-inline: auto;
+    
+}
+
+.rate-indicator {
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+}
+
+.facebook {
+    border-top: 3px solid var(--clr-facebook);
+}
+
+.twitter {
+    border-top: 3px solid var(--clr-twitter);
+}
+
+.youtube {
+    border-top: 3px solid var(--clr-youtube);
+}
+
+.instagram {
+    border-top-style: solid;
+    border-image: var(--clr-instagram) 2;
+}

@@ -1,0 +1,15 @@
+@use '../abstract' as *;
+
+header {
+    background-color: var(--neutral-200);
+}
+
+.header {
+    flex-direction: column;
+    padding-block: 1rem;
+
+    @include md('medium') {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
