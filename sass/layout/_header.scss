@@ -1,15 +1,27 @@
 @use '../abstract' as *;
 
 header {
+    --spacer-h: 8rem;
+    margin-bottom: calc(var(--spacer-h) * -1);
+    
     background-color: var(--neutral-200);
+    border-radius: 0 0 30px 30px;
 }
 
 .header {
     flex-direction: column;
-    padding-block: 1rem;
+    padding-block: 2rem var(--spacer-h);
+
+    hr {
+        border-top: 1px solid var(--neutral-400);
+    }
 
     @include md('medium') {
         flex-direction: row;
         justify-content: space-between;
+
+        hr {
+            display: none;
+        }
     }
 }

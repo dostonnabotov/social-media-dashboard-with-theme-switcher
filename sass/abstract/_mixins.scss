@@ -1,24 +1,52 @@
 $breakpoints: (
-  'small': (min-width: 400px),
-  'medium': (min-width: 960px),
-  'large': (min-width: 1000px),
+  'small': (min-width: 34em),
+  'medium': (min-width: 56.25em),
+  'large': (min-width: 70em),
 );
 
 @mixin md($breakpoint) {
-    $raw-query: map-get($breakpoints, $breakpoint);
-  
-    @if $raw-query {
-      $query: if(
-        type-of($raw-query) == 'string',
-        unquote($raw-query),
-        inspect($raw-query)
-      );
-  
-      @media #{$query} {
-        @content;
-      }
-    } @else {
-      @error 'No value found for `#{$breakpoint}`. '
-           + 'Please make sure it is defined in `$breakpoints` map.';
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
     }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+          + 'Please make sure it is defined in `$breakpoints` map.';
   }
+}
+
+// flexbox
+@mixin flex($align, $justify, $direction: row, $gap: 0) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+
+  @if $direction != null {
+    flex-direction: $direction;
+  }
+
+  @if $gap !=null {
+    gap: $gap;
+  }
+}
+
+// custom border
+@mixin custom-br($color) {
+  border-top: 4px solid $color;
+}
+
+// hover & focus states
+@mixin active {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}

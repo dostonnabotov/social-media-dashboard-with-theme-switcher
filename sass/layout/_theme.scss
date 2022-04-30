@@ -1,0 +1,59 @@
+@use '../abstract' as *;
+
+.theme {
+    @include flex(center, space-between);
+    gap: .5rem;
+
+    @include md('small') {
+        justify-content: end;
+    }
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+
+    &:checked ~ .dark-mode {
+        background-image: var(--toggle-outer-dark);
+
+        // input[type="checkbox"]:checked ~ .dark-mode::before
+        &::before {
+            right: auto;
+            left: 3px;
+            background-color: var(--toggle-inner-dark);
+        }
+    }
+}
+
+.dark-mode {
+    --toggle-outer-light: hsl(230, 22%, 74%);
+    --toggle-outer-dark: linear-gradient(to right, #378fe6, #00a9f0, #00bfde, #00cfb6, #3eda82);
+    --toggle-inner-light: hsl(0, 0%, 100%);
+    --toggle-inner-dark: hsl(230, 17%, 14%);
+
+    position: relative;
+    display: inline-block;
+
+    width: 60px;
+    height: 25px;
+
+    cursor: pointer;
+    background: var(--toggle-outer-light);
+    border-radius: 20px;
+
+    @include active {
+        background-image: var(--toggle-outer-dark);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        bottom: 3px;
+    
+        width: 20px;
+        background-color: var(--toggle-inner-light);
+        border-radius: 50%;
+    }
+}

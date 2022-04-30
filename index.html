@@ -1,250 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Frontend Mentor | Social Media Dashboard</title>
-
-</head>
-<body>
-
-  <header>
-    <div class="header container flex">
-      <div>
-        <h1 class="header__title fw-700 text-neutral">Social Media Dashboard</h1>
-        <p class="header__subtitle text-body">Total Followers: 23,004</p>
-      </div>
-      <div class="theme flex flex-strech a-center">
-        <p>Dark Mode</p>
-        <button id="dark-mode-toggle">Toggle</button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="main container">
-      <!-- Cards - Main -->
-      <div class="cards flex">
-        <!-- Card 1 -->
-        <div class="facebook card flow">
-          <!-- card header -->
-          <div class="card__header flex">
-            <img src="./images/icon-facebook.svg" alt="">
-            <span class="text-body">@nathanf</span>
-          </div>
-          <!-- card body -->
-          <div class="card__body">
-            <h1 class="text-neutral">1987</h1>
-            <h3 class="uppercase text-body">Followers</h3>
-          </div>
-          <!-- card footer -->
-          <div class="card__footer rate-indicator">
-            <img src="./images/icon-up.svg" alt="">
-            <span class="text-success">12 Today</span>
-          </div>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./index.js" defer></script>
+    <title>Frontend Mentor | Social Media Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <div class="[ header ] [ container flex ]">
+        <div>
+          <h1 class="fs-700 text-neutral">Social Media Dashboard</h1>
+          <p class="text-body">Total Followers: 23,004</p>
+          <hr />
         </div>
-        <!-- /Card 1 -->
-
-        <!-- Card 2 -->
-        <div class="twitter card flow">
-          <!-- card header -->
-          <div class="card__header flex">
-            <img src="./images/icon-twitter.svg" alt="">
-            <span class="text-body">@nathanf</span>
-          </div>
-          <!-- card body -->
-          <div class="card__body">
-            <h1 class="text-neutral">1044</h1>
-            <h3 class="uppercase text-body">Followers</h3>
-          </div>
-          <!-- card footer -->
-          <div class="card__footer rate-indicator">
-            <img src="./images/icon-up.svg" alt="">
-            <span class="text-success">99 Today</span>
-          </div>
-        </div>
-        <!-- /Card 2 -->
-
-         <!-- Card 3 -->
-        <div class="instagram card flow">
-          <!-- card header -->
-          <div class="card__header flex">
-            <img src="./images/icon-instagram.svg" alt="">
-            <span class="text-body">@realnathanf</span>
-          </div>
-          <!-- card body -->
-          <div class="card__body">
-            <h1 class="text-neutral">11k</h1>
-            <h3 class="uppercase text-body">Followers</h3>
-          </div>
-          <!-- card footer -->
-          <div class="card__footer rate-indicator">
-            <img src="./images/icon-up.svg" alt="">
-            <span class="text-success">1099 Today</span>
-          </div>
-        </div>
-        <!-- /Card 3 -->
-
-        <!-- Card 4 -->
-        <div class="youtube card flow">
-          <!-- card header -->
-          <div class="card__header flex">
-            <img src="./images/icon-twitter.svg" alt="">
-            <span class="text-body">Nathan F.</span>
-          </div>
-          <!-- card body -->
-          <div class="card__body">
-            <h1 class="text-neutral">8239</h1>
-            <h3 class="uppercase text-body">Subscribers</h3>
-          </div>
-          <!-- card footer -->
-          <div class="card__footer rate-indicator">
-            <img src="./images/icon-down.svg" alt="">
-            <span class="text-danger">144 Today</span>
-          </div>
-        </div>
-        <!-- /Card 4 -->
-      </div>
-      <!-- /Cards - Main -->
-
-      <h1 class="fw-700 text-neutral">Overview - Today</h1>
-
-      <!-- Cards -->
-    <div class="cards cards--grid grid">
-      <!-- Card 1 -->
-      <div class="card flow">
-        <div class="flex-strech a-center">
-          <p class="text-body">Page Views</p>
-          <img src="./images/icon-facebook.svg" alt="">
-        </div>
-        <div class="flex-strech a-end">
-          <h2 class="text-neutral">87</h2>
-          <div class="rate-indicator">
-            <img src="./images/icon-up.svg" alt="">
-            <span class="text-success">3%</span>
-          </div>
+        <div class="theme">
+          <p class="text-body">Dark Mode</p>
+          <label for="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-toggle" />
+            <span class="dark-mode"></span>
+          </label>
         </div>
       </div>
-      <!-- /Card 1 -->
+    </header>
 
-      <!-- Card 2 -->
-      <div class="card flow">
-        <div class="flex-strech a-center">
-          <p class="text-body">Likes</p>
-          <img src="./images/icon-facebook.svg" alt="">
-        </div>
-        <div class="flex-strech a-end">
-          <h2 class="text-neutral">52</h2>
-          <div class="rate-indicator">
-            <img src="./images/icon-down.svg" alt="">
-            <span class="text-danger">2%</span>
+    <main>
+      <div class="[ main ] [ container ]">
+        <!-- Cards - Main -->
+        <div class="[ cards ] [ grid ]">
+          <!-- Facebook -->
+          <div class="[ facebook ] [ card flow ]">
+            <div class="card__layout jc-center">
+              <img src="./images/icon-facebook.svg" alt="" />
+              <span class="text-body">@nathanf</span>
+            </div>
+            <div class="card__body">
+              <h1 class="fs-900 text-neutral">1987</h1>
+              <h3 class="uppercase text-body">Followers</h3>
+            </div>
+            <div class="rating">
+              <img src="./images/icon-up.svg" alt="" />
+              <span class="text-success">12 Today</span>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- /Card 2 -->
+          <!-- /Facebook -->
 
-      <!-- Card 3 -->
-      <div class="card flow">
-        <div class="flex-strech a-center">
-          <p class="text-body">Likes</p>
-          <img src="./images/icon-instagram.svg" alt="">
-        </div>
-        <div class="flex-strech a-end">
-          <h2 class="text-neutral">5462</h2>
-          <div class="rate-indicator">
-            <img src="./images/icon-up.svg" alt="">
-            <span class="text-success">2257%</span>
+          <!-- Twitter -->
+          <div class="[ twitter ] [ card flow ]">
+            <div class="card__layout jc-center">
+              <img src="./images/icon-twitter.svg" alt="" />
+              <span class="text-body">@nathanf</span>
+            </div>
+            <div class="card__body">
+              <h1 class="fs-900 text-neutral">1044</h1>
+              <h3 class="uppercase text-body">Followers</h3>
+            </div>
+            <div class="rating">
+              <img src="./images/icon-up.svg" alt="" />
+              <span class="text-success">99 Today</span>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- /Card 3 -->
+          <!-- /Twitter -->
 
-      <!-- Card 4 -->
-      <div class="card flow">
-        <div class="flex-strech a-center">
-          <p class="text-body">Profile Views</p>
-          <img src="./images/icon-instagram.svg" alt="">
-        </div>
-        <div class="flex-strech a-end">
-          <h2 class="text-neutral">52k</h2>
-          <div class="rate-indicator">
-            <img src="./images/icon-up.svg" alt="">
-            <span class="text-success">1375%</span>
+          <!-- Instagram -->
+          <div class="[ instagram ] [ card flow ]">
+            <div class="card__layout jc-center">
+              <img src="./images/icon-instagram.svg" alt="" />
+              <span class="text-body">@realnathanf</span>
+            </div>
+            <div class="card__body">
+              <h1 class="fs-900 text-neutral">11k</h1>
+              <h3 class="uppercase text-body">Followers</h3>
+            </div>
+            <div class="rating">
+              <img src="./images/icon-up.svg" alt="" />
+              <span class="text-success">1099 Today</span>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- /Card 4 -->
+          <!-- /Instagram -->
 
-      <!-- Card 5 -->
-      <div class="card flow">
-        <div class="flex-strech a-center">
-          <p class="text-body">Retweets</p>
-          <img src="./images/icon-twitter.svg" alt="">
-        </div>
-        <div class="flex-strech a-end">
-          <h2 class="text-neutral">117</h2>
-          <div class="rate-indicator">
-            <img src="./images/icon-up.svg" alt="">
-            <span class="text-success">303%</span>
+          <!-- YouTube -->
+          <div class="[ youtube ] [ card flow ]">
+            <div class="card__layout jc-center">
+              <img src="./images/icon-youtube.svg" alt="" />
+              <span class="text-body">Nathan F.</span>
+            </div>
+            <div class="card__body">
+              <h1 class="fs-900 text-neutral">8239</h1>
+              <h3 class="uppercase text-body">Subscribers</h3>
+            </div>
+            <div class="rating">
+              <img src="./images/icon-down.svg" alt="" />
+              <span class="text-danger">144 Today</span>
+            </div>
           </div>
+          <!-- /YouTube -->
         </div>
-      </div>
-      <!-- /Card 5 -->
+        <!-- /Cards - Main -->
 
-      <!-- Card 6 -->
-      <div class="card flow">
-        <div class="flex-strech a-center">
-          <p class="text-body">Likes</p>
-          <img src="./images/icon-twitter.svg" alt="">
-        </div>
-        <div class="flex-strech a-end">
-          <h2 class="text-neutral">507</h2>
-          <div class="rate-indicator">
-            <img src="./images/icon-up.svg" alt="">
-            <span class="text-success">553%</span>
-          </div>
-        </div>
-      </div>
-      <!-- /Card 6 -->
+        <h2 class="custom-heading">Overview - Today</h2>
 
-      <!-- Card 7 -->
-      <div class="card flow">
-        <div class="flex-strech a-center">
-          <p class="text-body">Likes</p>
-          <img src="./images/icon-facebook.svg" alt="">
-        </div>
-        <div class="flex-strech a-end">
-          <h2 class="text-neutral">107</h2>
-          <div class="rate-indicator">
-            <img src="./images/icon-down.svg" alt="">
-            <span class="text-danger">19%</span>
+        <!-- Cards - Overview -->
+        <div class="[ cards ][ grid ]">
+          <!-- Facebook 1 -->
+          <div class="[ card ] [ flow ]">
+            <div class="card__layout jc-between">
+              <p class="text-body">Page Views</p>
+              <img src="./images/icon-facebook.svg" alt="" />
+            </div>
+            <div class="card__layout jc-between">
+              <h2 class="fs-700 text-neutral">87</h2>
+              <div class="rating">
+                <img src="./images/icon-up.svg" alt="" />
+                <span class="text-success">3%</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- /Card 7 -->
+          <!-- /Facebook 1 -->
 
-      <!-- Card 8 -->
-      <div class="card flow">
-        <div class="flex-strech a-center">
-          <p class="text-body">Total Views</p>
-          <img src="./images/icon-facebook.svg" alt="">
-        </div>
-        <div class="flex-strech a-end">
-          <h2 class="text-neutral">1407</h2>
-          <div class="rate-indicator">
-            <img src="./images/icon-down.svg" alt="">
-            <span class="text-danger">12%</span>
+          <!-- Facebook 2 -->
+          <div class="[ card ] [ flow ]">
+            <div class="card__layout jc-between">
+              <p class="text-body">Likes</p>
+              <img src="./images/icon-facebook.svg" alt="" />
+            </div>
+            <div class="card__layout jc-between">
+              <h2 class="fs-700 text-neutral">52</h2>
+              <div class="rating">
+                <img src="./images/icon-down.svg" alt="" />
+                <span class="text-danger">2%</span>
+              </div>
+            </div>
           </div>
+          <!-- /Facebook 2 -->
+
+          <!-- Instagram 1 -->
+          <div class="[ card ] [ flow ]">
+            <div class="card__layout jc-between">
+              <p class="text-body">Likes</p>
+              <img src="./images/icon-instagram.svg" alt="" />
+            </div>
+            <div class="card__layout jc-between">
+              <h2 class="fs-700 text-neutral">5462</h2>
+              <div class="rating">
+                <img src="./images/icon-up.svg" alt="" />
+                <span class="text-success">2257%</span>
+              </div>
+            </div>
+          </div>
+          <!-- /Instagram 1 -->
+
+          <!-- Instagram 2 -->
+          <div class="[ card ] [ flow ]">
+            <div class="card__layout jc-between">
+              <p class="text-body">Profile Views</p>
+              <img src="./images/icon-instagram.svg" alt="" />
+            </div>
+            <div class="card__layout jc-between">
+              <h2 class="fs-700 text-neutral">52k</h2>
+              <div class="rating">
+                <img src="./images/icon-up.svg" alt="" />
+                <span class="text-success">1375%</span>
+              </div>
+            </div>
+          </div>
+          <!-- /Instagram 2 -->
+
+          <!-- Twitter 1 -->
+          <div class="[ card ] [ flow ]">
+            <div class="card__layout jc-between">
+              <p class="text-body">Retweets</p>
+              <img src="./images/icon-twitter.svg" alt="" />
+            </div>
+            <div class="card__layout jc-between">
+              <h2 class="fs-700 text-neutral">117</h2>
+              <div class="rating">
+                <img src="./images/icon-up.svg" alt="" />
+                <span class="text-success">303%</span>
+              </div>
+            </div>
+          </div>
+          <!-- /Twitter 1 -->
+
+          <!-- Twitter 2 -->
+          <div class="[ card ] [ flow ]">
+            <div class="card__layout jc-between">
+              <p class="text-body">Likes</p>
+              <img src="./images/icon-twitter.svg" alt="" />
+            </div>
+            <div class="card__layout jc-between">
+              <h2 class="fs-700 text-neutral">507</h2>
+              <div class="rating">
+                <img src="./images/icon-up.svg" alt="" />
+                <span class="text-success">553%</span>
+              </div>
+            </div>
+          </div>
+          <!-- /Twitter 2 -->
+
+          <!-- YouTube 1 -->
+          <div class="[ card ] [ flow ]">
+            <div class="card__layout jc-between">
+              <p class="text-body">Likes</p>
+              <img src="./images/icon-youtube.svg" alt="" />
+            </div>
+            <div class="card__layout jc-between">
+              <h2 class="fs-700 text-neutral">107</h2>
+              <div class="rating">
+                <img src="./images/icon-down.svg" alt="" />
+                <span class="text-danger">19%</span>
+              </div>
+            </div>
+          </div>
+          <!-- /YouTube 1 -->
+
+          <!-- YouTube 2 -->
+          <div class="[ card ] [ flow ]">
+            <div class="card__layout jc-between">
+              <p class="text-body">Total Views</p>
+              <img src="./images/icon-youtube.svg" alt="" />
+            </div>
+            <div class="card__layout jc-between">
+              <h2 class="fs-700 text-neutral">1407</h2>
+              <div class="rating">
+                <img src="./images/icon-down.svg" alt="" />
+                <span class="text-danger">12%</span>
+              </div>
+            </div>
+          </div>
+          <!-- /YouTube 2 -->
         </div>
+        <!-- /Cards - Overview -->
       </div>
-      <!-- /Card 8 -->
-    </div>
-    <!-- /Cards -->
-    </div>
-  </main>
-  
-</body>
+    </main>
+  </body>
 </html>
