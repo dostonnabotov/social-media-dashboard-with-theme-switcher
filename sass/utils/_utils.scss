@@ -1,52 +1,56 @@
-@use '../abstract' as *;
+@use "../abstract" as *;
 
 /* Main */
 .container {
-    width: min(100% - 2rem, 70rem);
-    margin-inline: auto;
+  width: min(100% - 2rem, 75rem);
+  margin-inline: auto;
 }
 
 .flow > *:where(:not(:first-child)) {
-    margin-top: var(--flow-space, 1rem);
+  margin-top: var(--flow-space, 1rem);
 }
 
 /* Flex */
 .flex {
-    display: flex;
-    gap: var(--gap, 1rem);
+  display: flex;
+  gap: var(--gap, 1rem);
 }
 
-.jc-between { justify-content: space-between; }
-.jc-center { justify-content: center; }
+.jc-between {
+  justify-content: space-between;
+}
+.jc-center {
+  justify-content: center;
+}
 
 /* Grid */
 .grid {
-    display: grid;
-    gap: var(--gap, 1rem);
+  display: grid;
+  gap: var(--gap, 1rem);
 }
 
 /* Typography */
-.fs-900 { font-size: var(--fs-900); }
-.fs-700 { font-size: var(--fs-700); }
-
-[class*="text-"]{
-    color: var(--clr);
+@each $shade, $value in $font-sizes {
+  .fs-#{$shade} {
+    font-size: $value;
+  }
 }
 
-.text-neutral { --clr: var(--neutral-900); }
-.text-body    { --clr: var(--neutral-400); }
-.text-success { --clr: var(--clr-success); }
-.text-danger  { --clr: var(--clr-danger) ; }
+@each $shade, $value in $font-colors {
+  .text-#{$shade} {
+    color: $value;
+  }
+}
 
 .uppercase {
-    text-transform: uppercase;
-    font-weight: var(--fw-200);
-    letter-spacing: 2px;
-    margin-block: .3rem;
+  text-transform: uppercase;
+  font-weight: var(--fw-200);
+  letter-spacing: 2px;
+  margin-block: 0.3rem;
 }
 
 .custom-heading {
-    font-size: 1.8rem;
-    margin-top: 2rem;
-    color: var(--neutral-custom);
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  color: var(--neutral-custom);
 }

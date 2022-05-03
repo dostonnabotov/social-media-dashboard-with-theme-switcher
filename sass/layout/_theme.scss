@@ -1,59 +1,81 @@
-@use '../abstract' as *;
+@use "../abstract" as *;
+
+$toggle-inner-light: hsl(0, 0%, 100%);
+$toggle-inner-dark: hsl(230, 17%, 14%);
+$toggle-outer-light: hsl(230, 22%, 74%);
+$toggle-outer-dark: linear-gradient(
+  to right,
+  hsl(210, 78%, 56%),
+  hsl(146, 68%, 55%)
+);
 
 .theme {
-    @include flex(center, space-between);
-    gap: .5rem;
+  @include flex(center, space-between);
+  gap: 0.5rem;
 
-    @include md('small') {
-        justify-content: end;
-    }
+  @include md("small") {
+    justify-content: end;
+  }
 }
 
 input[type="checkbox"] {
-    visibility: hidden;
-    display: none;
+  visibility: hidden;
+  display: none;
 
-    &:checked ~ .dark-mode {
-        background-image: var(--toggle-outer-dark);
+  &:checked ~ .dark-mode {
+    background: $toggle-outer-dark;
 
-        // input[type="checkbox"]:checked ~ .dark-mode::before
-        &::before {
-            right: auto;
-            left: 3px;
-            background-color: var(--toggle-inner-dark);
-        }
+    // input[type="checkbox"]:checked ~ .dark-mode::before
+    &::before {
+      right: auto;
+      left: 3px;
+      background-color: $toggle-inner-dark;
     }
+  }
+
+  @include theme(dark) {
+    &:checked ~ .dark-mode {
+      background: $toggle-outer-light;
+
+      &::before {
+        background: $toggle-inner-light;
+      }
+    }
+  }
 }
 
 .dark-mode {
-    --toggle-outer-light: hsl(230, 22%, 74%);
-    --toggle-outer-dark: linear-gradient(to right, #378fe6, #00a9f0, #00bfde, #00cfb6, #3eda82);
-    --toggle-inner-light: hsl(0, 0%, 100%);
-    --toggle-inner-dark: hsl(230, 17%, 14%);
+  position: relative;
+  display: inline-block;
 
-    position: relative;
-    display: inline-block;
+  width: 60px;
+  height: 25px;
 
-    width: 60px;
-    height: 25px;
+  cursor: pointer;
+  background: $toggle-outer-light;
+  border-radius: 20px;
 
-    cursor: pointer;
-    background: var(--toggle-outer-light);
-    border-radius: 20px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
 
-    @include active {
-        background-image: var(--toggle-outer-dark);
-    }
+    width: 20px;
+    background-color: $toggle-inner-light;
+    border-radius: 50%;
+  }
+
+  @include active {
+    background-image: $toggle-outer-dark;
+  }
+
+  @include theme(dark) {
+    background: $toggle-outer-dark;
 
     &::before {
-        content: '';
-        position: absolute;
-        top: 3px;
-        right: 3px;
-        bottom: 3px;
-    
-        width: 20px;
-        background-color: var(--toggle-inner-light);
-        border-radius: 50%;
+      background-color: $toggle-inner-dark;
     }
+  }
 }
