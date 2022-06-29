@@ -1,0 +1,44 @@
+.cards {
+  margin-block: 2rem;
+  grid-template-columns:
+      repeat(
+        auto-fit,
+        minmax(min(18rem, 100%), 
+        1fr)
+      );
+}
+
+/* Cards */
+.card {
+  --flow-space: 1.5rem;
+  position: relative;
+  width: min(100%, 20rem);
+  margin-inline: auto;
+  padding: 1.5rem 2rem;
+
+  text-align: center;
+  background-color: var(--neutral-300);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.card:is(:hover, :focus) {
+  background-color: var(--neutral-hover);
+}
+
+.card__layout, .rating {
+  display: flex;
+  align-items: center;
+}
+
+.card__layout { gap: 0.7rem; }
+
+.card__layout + .card__layout {
+  margin-top: 1.5rem;
+  align-items: flex-end;
+}
+
+.rating { 
+  gap: 0.3rem;
+  justify-content: center;
+}
