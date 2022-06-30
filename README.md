@@ -15,7 +15,7 @@ This is a solution to the [Social media dashboard with theme switcher challenge 
 
 ## Preview
 
-![Design preview for the Social media dashboard with theme switcher coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Social media dashboard with theme switcher coding challenge](./assets/images/screenshot.png)
 
 ## Links
 
