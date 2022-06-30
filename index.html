@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    
+    <script src="./index.js" defer></script>
+    
+    <title>Frontend Mentor | Social Media Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <div class="header | container flex">
+        <div>
+          <h1 class="fs-700 text-neutral">Social Media Dashboard</h1>
+          <p class="text-body">Total Followers: 23,004</p>
+          <hr />
+        </div>
+        <div class="theme">
+          <p class="text-body">Dark Mode</p>
+          <label for="theme-toggle">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="dark-mode"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="main | container">
+        <!-- Cards - Main -->
+        <div class="cards | grid">
+          <!-- Facebook -->
+          <div class="facebook | border-top | card flow">
+            <div class="card__layout | jc-center">
+              <img src="./assets/images/icon-facebook.svg" alt="" />
+              <span class="text-body">@nathanf</span>
+            </div>
+            <div class="card__body">
+              <h2 class="fs-900 text-neutral">1987</h2>
+              <h3 class="fs-500 uppercase text-body">Followers</h3>
+            </div>
+            <div class="rating">
+              <img src="./assets/images/icon-up.svg" alt="" />
+              <span class="text-success">12 Today</span>
+            </div>
+          </div>
+          <!-- /Facebook -->
+
+          <!-- Twitter -->
+          <div class="twitter | border-top | card flow">
+            <div class="card__layout | jc-center">
+              <img src="./assets/images/icon-twitter.svg" alt="" />
+              <span class="text-body">@nathanf</span>
+            </div>
+            <div class="card__body">
+              <h2 class="fs-900 text-neutral">1044</h2>
+              <h3 class="fs-500 uppercase text-body">Followers</h3>
+            </div>
+            <div class="rating">
+              <img src="./assets/images/icon-up.svg" alt="" />
+              <span class="text-success">99 Today</span>
+            </div>
+          </div>
+          <!-- /Twitter -->
+
+          <!-- Instagram -->
+          <div class="instagram | border-top | card flow">
+            <div class="card__layout | jc-center">
+              <img src="./assets/images/icon-instagram.svg" alt="" />
+              <span class="text-body">@realnathanf</span>
+            </div>
+            <div class="card__body">
+              <h2 class="fs-900 text-neutral">11k</h2>
+              <h3 class="fs-500 uppercase text-body">Followers</h3>
+            </div>
+            <div class="rating">
+              <img src="./assets/images/icon-up.svg" alt="" />
+              <span class="text-success">1099 Today</span>
+            </div>
+          </div>
+          <!-- /Instagram -->
+
+          <!-- YouTube -->
+          <div class="youtube | border-top | card flow">
+            <div class="card__layout | jc-center">
+              <img src="./assets/images/icon-youtube.svg" alt="" />
+              <span class="text-body">Nathan F.</span>
+            </div>
+            <div class="card__body">
+              <h2 class="fs-900 text-neutral">8239</h2>
+              <h3 class="fs-500 uppercase text-body">Subscribers</h3>
+            </div>
+            <div class="rating">
+              <img src="./assets/images/icon-down.svg" alt="" />
+              <span class="text-danger">144 Today</span>
+            </div>
+          </div>
+          <!-- /YouTube -->
+        </div>
+        <!-- /Cards - Main -->
+
+        <h2 class="custom-heading">Overview - Today</h2>
+
+        <!-- Cards - Overview -->
+        <div class="cards | grid" id="overviews"></div>
+        <!-- /Cards - Overview -->
+      </div>
+    </main>
+
+    <template id="overview">
+      <div class="card | flow">
+        <div class="card__layout | jc-between">
+          <p class="text-body" data-overview="title"></p>
+          <img data-overview="icon" />
+        </div>
+        <div class="card__layout | jc-between">
+          <h2 class="fs-700 text-neutral" data-overview="number"></h2>
+          <div class="rating">
+            <img data-overview="rateImg" alt="" />
+            <span data-overview="rate"></span>
+          </div>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

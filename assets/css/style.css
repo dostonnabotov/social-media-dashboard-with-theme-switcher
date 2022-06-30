@@ -1,0 +1,338 @@
+/* Google Fonts - Inter (400, 700) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+/* ===========
+  Root
+=========== */
+:root {
+  color-scheme: light dark;
+  --clr-success: hsl(163, 72%, 41%);
+  --clr-danger: hsl(356, 69%, 56%);
+  --ff-body: "Inter", sans-serif;
+  --fs-400: 0.875rem;
+  --fs-500: 1rem;
+  --fs-700: 1.5rem;
+  --fs-900: 2.8rem;
+  --fw-200: 400;
+  --fw-400: 700;
+  --neutral-100: hsl(0, 0%, 100%);
+  --neutral-200: hsl(225, 100%, 98%);
+  --neutral-300: hsl(227, 47%, 96%);
+  --neutral-400: hsl(228, 12%, 44%);
+  --neutral-900: hsl(230, 17%, 14%);
+  --toggle-inner: hsl(0, 0%, 100%);
+  --toggle-outer: hsl(230, 22%, 74%);
+  --neutral-custom: var(--neutral-400);
+  --neutral-hover: hsl(232, 33%, 91%);
+}
+@media (min-width: 56.25em) {
+  :root {
+    --fs-500: 1.125rem;
+    --fs-700: 2rem;
+    --fs-900: 3.1rem;
+  }
+}
+
+.dark-theme {
+  --neutral-100: hsl(230, 17%, 14%);
+  --neutral-200: hsl(232, 19%, 15%);
+  --neutral-300: hsl(228, 28%, 20%);
+  --neutral-400: hsl(228, 34%, 66%);
+  --toggle-inner: hsl(230, 17%, 14%);
+  --toggle-outer: linear-gradient(to right,hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --neutral-900: hsl(0, 0%, 100%);
+  --neutral-custom: var(--neutral-900);
+  --neutral-hover: hsl(228, 26%, 27%);
+}
+
+/* ===========
+  Reset
+=========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1, h2, h3, h4,
+p {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  line-height: 1;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* ============
+  Global
+=========== */
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  background-color: var(--neutral-100);
+  color: var(--neutral-400);
+}
+
+/* =============
+  Composition
+============= */
+.container {
+  width: min(100% - 2rem, 75rem);
+  margin-inline: auto;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+/* ============
+  Utility
+=========== */
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.text-neutral {
+  color: var(--neutral-900);
+}
+
+.text-success {
+  color: var(--clr-success);
+}
+
+.text-danger {
+  color: var(--clr-danger);
+}
+
+.uppercase {
+  text-transform: uppercase;
+  font-weight: var(--fw-200);
+  letter-spacing: 2px;
+  margin-block: 0.3rem;
+}
+
+.border-top::before {
+  --clr-facebook: hsl(208deg, 92%, 53%);
+  --clr-twitter: hsl(203deg, 89%, 53%);
+  --clr-instagram: linear-gradient(45deg, hsl(37deg, 97%, 70%), hsl(329deg, 70%, 58%));
+  --clr-youtube: hsl(348deg, 97%, 39%);
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 0.3rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.border-top.facebook::before {
+  background: var(--clr-facebook);
+}
+
+.border-top.twitter::before {
+  background: var(--clr-twitter);
+}
+
+.border-top.instagram::before {
+  background: var(--clr-instagram);
+}
+
+.border-top.youtube::before {
+  background: var(--clr-youtube);
+}
+
+/* ============
+  Exception
+=========== */
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+@media (min-width: 34em) {
+  .theme {
+    justify-content: end;
+  }
+}
+.custom-heading {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  color: var(--neutral-custom);
+}
+
+/* ============
+  Block
+=========== */
+.dark-mode {
+  --toggle-inner-padding: 3px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  cursor: pointer;
+  background: var(--toggle-outer);
+  border-radius: 20px;
+  box-shadow: inset 0 0 2px 1px hsla(0deg, 0%, 0%, 0.1);
+}
+.dark-mode::before {
+  content: "";
+  position: absolute;
+  top: var(--toggle-inner-padding);
+  right: var(--toggle-inner-padding);
+  bottom: var(--toggle-inner-padding);
+  /* 25 is the toggle height */
+  width: calc(25 - var(--toggle-inner-padding));
+  aspect-ratio: 1;
+  background: var(--toggle-inner);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 1px hsla(0deg, 0%, 0%, 0.3);
+}
+
+/**
+ * 1 - display: none will remove element from DOM,
+ *     and cannot be accessed through keyboards
+ * 2 - improves a11y, by allowing to use keyboard
+ *     to switch different themes
+ * 3 - switch the toggle from right to left
+ */
+input[type=checkbox] {
+  opacity: 0;
+  /* [1] */
+  position: absolute;
+  /* [2] */
+  /* [3] */
+}
+input[type=checkbox]:focus ~ .dark-mode {
+  background: aqua;
+}
+input[type=checkbox]:checked ~ .dark-mode::before {
+  right: auto;
+  left: var(--toggle-inner-padding);
+}
+
+header {
+  --spacer-h: 8.5rem;
+  margin-bottom: calc(var(--spacer-h) * -1);
+  background-color: var(--neutral-200);
+  border-radius: 0 0 30px 30px;
+}
+
+.header {
+  flex-direction: column;
+  padding-block: 2.5rem var(--spacer-h);
+}
+.header hr {
+  border-top: 1px solid var(--neutral-400);
+}
+@media (min-width: 56.25em) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .header hr {
+    display: none;
+  }
+}
+
+.cards {
+  margin-block: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+}
+
+.card {
+  --flow-space: 1.5rem;
+  position: relative;
+  width: min(100%, 20rem);
+  margin-inline: auto;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  background-color: var(--neutral-300);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.card:is(:hover, :focus) {
+  background-color: var(--neutral-hover);
+}
+.card__layout, .card .rating {
+  display: flex;
+  align-items: center;
+}
+.card__layout {
+  gap: 0.7rem;
+}
+.card__layout + .card__layout {
+  margin-top: 1.5rem;
+  align-items: flex-end;
+}
+
+.rating {
+  gap: 0.3rem;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */

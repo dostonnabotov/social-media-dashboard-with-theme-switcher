@@ -1,6 +1,9 @@
+@use "../abstract" as *;
+
 header {
   --spacer-h: 8.5rem;
   margin-bottom: calc(var(--spacer-h) * -1);
+
   background-color: var(--neutral-200);
   border-radius: 0 0 30px 30px;
 }
@@ -8,16 +11,17 @@ header {
 .header {
   flex-direction: column;
   padding-block: 2.5rem var(--spacer-h);
-}
-.header hr {
-  border-top: 1px solid var(--neutral-400);
-}
-@media (min-width: 56.25em) {
-  .header {
+
+  hr {
+    border-top: 1px solid var(--neutral-400);
+  }
+
+  @include md("medium") {
     flex-direction: row;
     justify-content: space-between;
-  }
-  .header hr {
-    display: none;
+
+    hr {
+      display: none;
+    }
   }
 }

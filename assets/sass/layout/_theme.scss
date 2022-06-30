@@ -1,0 +1,58 @@
+@use "../abstract" as *;
+
+/* ============
+  Block
+=========== */
+// toggle container
+.dark-mode {
+  --toggle-inner-padding: 3px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  cursor: pointer;
+  background: var(--toggle-outer);
+  border-radius: 20px;
+  box-shadow: inset 0 0 2px 1px hsl(0, 0%, 0%, .1);
+
+  // inner toggle
+  &::before {
+    content: "";
+    position: absolute;
+    top: var(--toggle-inner-padding);
+    right: var(--toggle-inner-padding);
+    bottom: var(--toggle-inner-padding);
+  
+    /* 25 is the toggle height */
+    width: calc(25 - var(--toggle-inner-padding));
+    aspect-ratio: 1;
+    background: var(--toggle-inner);
+    border-radius: 50%;
+    box-shadow: 0 0 4px 1px hsl(0, 0%, 0%, .3);
+  }
+}
+
+/**
+ * 1 - display: none will remove element from DOM,
+ *     and cannot be accessed through keyboards
+ * 2 - improves a11y, by allowing to use keyboard
+ *     to switch different themes
+ * 3 - switch the toggle from right to left
+ */
+
+input[type=checkbox] {
+  opacity: 0; /* [1] */
+  position: absolute; 
+
+  /* [2] */
+  &:focus ~ .dark-mode {
+    background: aqua; 
+  }
+
+  /* [3] */
+  &:checked ~ .dark-mode::before {
+    right: auto;
+    left: var(--toggle-inner-padding);
+  }
+}
+
